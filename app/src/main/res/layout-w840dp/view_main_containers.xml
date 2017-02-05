@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <com.lucasurbas.masterdetail.ui.widget.CustomAppBar
-            android:id="@+id/activity_main__custom_appbar"
+            android:id="@+id/custom_appbar"
             android:fitsSystemWindows="true"
             android:stateListAnimator="@animator/appbar_always_elevated"
             android:theme="@style/AppTheme.ActionBar"
@@ -24,7 +24,7 @@
             android:gravity="center_horizontal">
 
             <com.lucasurbas.masterdetail.ui.widget.BoundedCardView
-                android:id="@+id/activity_main__frame_master"
+                android:id="@+id/frame_master"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_horizontal"
@@ -51,13 +51,13 @@
         android:gravity="center_horizontal">
 
         <android.support.v4.widget.Space
-            android:id="@+id/activity_main__space_details"
+            android:id="@+id/space_details"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"/>
 
         <com.lucasurbas.masterdetail.ui.widget.BoundedCardView
-            android:id="@+id/activity_main__frame_details"
+            android:id="@+id/frame_details"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_gravity="center_horizontal"

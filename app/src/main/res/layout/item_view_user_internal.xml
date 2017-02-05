@@ -11,7 +11,7 @@
     android:orientation="horizontal">
 
     <ImageView
-        android:id="@+id/item_view_user__avatar"
+        android:id="@+id/avatar"
         android:src="@drawable/circle_black_transparent"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"
@@ -29,7 +29,7 @@
         android:orientation="vertical">
 
         <com.actinarium.aligned.TextView
-            android:id="@+id/item_view_user__name"
+            android:id="@+id/name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16sp"
@@ -37,7 +37,7 @@
             app:leading="20sp"/>
 
         <com.actinarium.aligned.TextView
-            android:id="@+id/item_view_user__description"
+            android:id="@+id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="2"
@@ -49,7 +49,7 @@
     </LinearLayout>
 
     <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/item_view_user__action"
+        android:id="@+id/action"
         android:src="@drawable/ic_favorite_24dp"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="16dp"

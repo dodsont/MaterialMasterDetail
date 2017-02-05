@@ -12,13 +12,13 @@
         android:background="@color/black_transparent_12p">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/fragment_person_details__toolbar"
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"/>
     </FrameLayout>
 
     <com.actinarium.aligned.TextView
-        android:id="@+id/fragment_person_details__description"
+        android:id="@+id/description"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"

@@ -13,14 +13,14 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
-        android:id="@+id/view_main_header__avatar"
+        android:id="@+id/avatar"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginBottom="16dp"
         android:src="@drawable/circle_black_transparent"/>
 
     <TextView
-        android:id="@+id/view_main_header__email"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/view_main_header__email"/>

@@ -9,12 +9,12 @@
     android:theme="@style/AppTheme.ActionBar">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/view_main_toolbar__toolbar_general"
+        android:id="@+id/toolbar_general"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"/>
 
     <com.lucasurbas.masterdetail.ui.widget.BoundedFrameLayout
-        android:id="@+id/view_main_toolbar__frame_specific"
+        android:id="@+id/frame_specific"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="center_horizontal"
@@ -23,7 +23,7 @@
         app:bounded_width="@dimen/container_max_width">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/view_main_toolbar__toolbar_specific"
+            android:id="@+id/toolbar_specific"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"/>
     </com.lucasurbas.masterdetail.ui.widget.BoundedFrameLayout>
