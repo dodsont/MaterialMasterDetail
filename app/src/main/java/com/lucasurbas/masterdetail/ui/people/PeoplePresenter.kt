@@ -17,32 +17,26 @@ constructor(private val context: Context, private val navigator: PeopleContract.
     private var view: PeopleContract.View? = null
 
     private var peopleList: MutableList<Person>? = null
-    private val names: MutableList<String>
-
-    init {
-
-        names = ArrayList<String>()
-        names.add("Nolan Mcfetridge")
-        names.add("Nick Blackford")
-        names.add("Carlee Mucci")
-        names.add("Tianna Henricksen")
-        names.add("Julie Rathburn")
-        names.add("Silvana Stiner")
-        names.add("Rudolf Grate")
-        names.add("Saran Seaman")
-        names.add("Carol Pavao")
-        names.add("Karey Shatley")
-        names.add("Carlita Frye")
-        names.add("Sharita Ekberg")
-        names.add("Elvia Huitt")
-        names.add("Kesha Liebel")
-        names.add("Aleida Vincelette")
-        names.add("Stormy Rossiter")
-        names.add("Carolina Degner")
-        names.add("Ruth Slavin")
-        names.add("Delilah Hermosillo")
-        names.add("Willow Haley")
-    }
+    private val names = listOf("Nolan Mcfetridge",
+            "Nick Blackford",
+            "Carlee Mucci",
+            "Tianna Henricksen",
+            "Julie Rathburn",
+            "Silvana Stiner",
+            "Rudolf Grate",
+            "Saran Seaman",
+            "Carol Pavao",
+            "Karey Shatley",
+            "Carlita Frye",
+            "Sharita Ekberg",
+            "Elvia Huitt",
+            "Kesha Liebel",
+            "Aleida Vincelette",
+            "Stormy Rossiter",
+            "Carolina Degner",
+            "Ruth Slavin",
+            "Delilah Hermosillo",
+            "Willow Haley")
 
     override fun attachView(view: PeopleContract.View) {
         this.view = view
@@ -55,9 +49,9 @@ constructor(private val context: Context, private val navigator: PeopleContract.
     override fun getPeople() {
         peopleList = ArrayList<Person>()
         for (i in 0..7) {
-            val person = Person(UUID.randomUUID().toString())
-            person.name = randomName
-            person.description = context.getString(R.string.fragment_people__lorem_ipsum)
+            val person = Person(id = UUID.randomUUID().toString(),
+                    name = randomName,
+                    description = context.getString(R.string.fragment_people__lorem_ipsum))
             peopleList!!.add(person)
         }
         if (view != null) {
@@ -84,9 +78,9 @@ constructor(private val context: Context, private val navigator: PeopleContract.
         handler.postDelayed({
             if (view != null) {
                 view!!.hideLoading()
-                val person = Person(UUID.randomUUID().toString())
-                person.name = randomName
-                person.description = context.getString(R.string.fragment_people__lorem_ipsum)
+                val person = Person(id = UUID.randomUUID().toString(),
+                        name = randomName,
+                        description = context.getString(R.string.fragment_people__lorem_ipsum))
                 peopleList!!.add(0, person)
                 view!!.showPeopleList(peopleList!!)
             }
