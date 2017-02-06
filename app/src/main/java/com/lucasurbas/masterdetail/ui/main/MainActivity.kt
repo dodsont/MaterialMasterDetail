@@ -3,10 +3,8 @@ package com.lucasurbas.masterdetail.ui.main
 import android.os.Bundle
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
-import android.support.v4.view.ViewCompat
 import android.view.MenuItem
 import android.view.View
-import android.view.ViewGroup
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.injection.app.ApplicationComponent
 import com.lucasurbas.masterdetail.injection.main.DaggerMainComponent
@@ -30,15 +28,7 @@ class MainActivity : BaseActivity(), MainContract.View, NavigationView.OnNavigat
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if (insets != null && nav_side != null) {
-            ViewCompat.setOnApplyWindowInsetsListener(insets) { v, listener ->
-                (insets.layoutParams as ViewGroup.MarginLayoutParams).topMargin = listener.systemWindowInsetTop
-                (insets.layoutParams as ViewGroup.MarginLayoutParams).bottomMargin = listener.systemWindowInsetBottom
-                insets.requestLayout()
-                (nav_side.layoutParams as ViewGroup.MarginLayoutParams).topMargin = -listener.systemWindowInsetTop
-                nav_side.requestLayout()
-                listener.consumeSystemWindowInsets()
-            }
+        if (nav_side != null) {
             nav_side.setNavigationItemSelectedListener(this)
         }
 
