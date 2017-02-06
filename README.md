@@ -1,7 +1,5 @@
 # Material Master/Detail
 
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Material%20Master%2FDetail-brightgreen.svg?style=flat)](https://android-arsenal.com/details/3/5101)
-
 Android Application sample of how to implement Master/Detail pattern that follows Material Design visual language.
 
 It is a Kotlin porting of Lucas Urbas's sample (see his article on [this link](http://goo.gl/ex8MVd)).
