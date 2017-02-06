@@ -31,7 +31,7 @@ constructor(private val mainActivity: MainActivity) : MainContract.Navigator {
                     .beginTransaction()
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                     .remove(details)
-                    .commitNow()
+                    .commit()
             return true
         }
         return false
@@ -40,7 +40,7 @@ constructor(private val mainActivity: MainActivity) : MainContract.Navigator {
     private fun clearMaster() {
         val master = mainActivity.supportFragmentManager.findFragmentByTag(TAG_MASTER)
         if (master != null) {
-            mainActivity.supportFragmentManager.beginTransaction().remove(master).commitNow()
+            mainActivity.supportFragmentManager.beginTransaction().remove(master).commit()
         }
     }
 
@@ -49,7 +49,7 @@ constructor(private val mainActivity: MainActivity) : MainContract.Navigator {
         mainActivity.containers_layout.custom_appbar.setState(State.SINGLE_COLUMN_MASTER)
         mainActivity.containers_layout.state = State.SINGLE_COLUMN_MASTER
         val fragment = HomeFeedFragment.newInstance()
-        mainActivity.supportFragmentManager.beginTransaction().replace(R.id.frame_master, fragment, TAG_MASTER).commitNow()
+        mainActivity.supportFragmentManager.beginTransaction().replace(R.id.frame_master, fragment, TAG_MASTER).commit()
     }
 
     override fun goToPeople() {
@@ -57,7 +57,7 @@ constructor(private val mainActivity: MainActivity) : MainContract.Navigator {
         mainActivity.containers_layout.custom_appbar.setState(State.TWO_COLUMNS_EMPTY)
         mainActivity.containers_layout.state = State.TWO_COLUMNS_EMPTY
         val master = PeopleFragment.newInstance()
-        mainActivity.supportFragmentManager.beginTransaction().replace(R.id.frame_master, master, TAG_MASTER).commitNow()
+        mainActivity.supportFragmentManager.beginTransaction().replace(R.id.frame_master, master, TAG_MASTER).commit()
     }
 
     override fun goToFavorites() {
@@ -65,7 +65,7 @@ constructor(private val mainActivity: MainActivity) : MainContract.Navigator {
         mainActivity.containers_layout.custom_appbar.setState(State.SINGLE_COLUMN_MASTER)
         mainActivity.containers_layout.state = State.SINGLE_COLUMN_MASTER
         val fragment = FavoritesFragment.newInstance()
-        mainActivity.supportFragmentManager.beginTransaction().replace(R.id.frame_master, fragment, TAG_MASTER).commitNow()
+        mainActivity.supportFragmentManager.beginTransaction().replace(R.id.frame_master, fragment, TAG_MASTER).commit()
     }
 
     override fun goToMap() {
@@ -73,7 +73,7 @@ constructor(private val mainActivity: MainActivity) : MainContract.Navigator {
         mainActivity.containers_layout.custom_appbar.setState(State.SINGLE_COLUMN_DETAILS)
         mainActivity.containers_layout.state = State.SINGLE_COLUMN_DETAILS
         val fragment = MapFragment.newInstance()
-        mainActivity.supportFragmentManager.beginTransaction().replace(R.id.frame_details, fragment, TAG_DETAILS).commitNow()
+        mainActivity.supportFragmentManager.beginTransaction().replace(R.id.frame_details, fragment, TAG_DETAILS).commit()
     }
 
     override fun goToPersonDetails(person: Person) {
@@ -84,7 +84,7 @@ constructor(private val mainActivity: MainActivity) : MainContract.Navigator {
                 .beginTransaction()
                 .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
                 .replace(R.id.frame_details, fragment, TAG_DETAILS)
-                .commitNow()
+                .commit()
     }
 
     override fun goToSettings() {
