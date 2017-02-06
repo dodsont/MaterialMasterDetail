@@ -74,14 +74,6 @@ class CustomAppBar : AppBarLayout {
 
     fun setState(state: MainNavigator.State) {
         this.state = state
-        when (state) {
-            MainNavigator.State.SINGLE_COLUMN_MASTER, MainNavigator.State.SINGLE_COLUMN_DETAILS -> if (space_toolbar != null) {
-                space_toolbar.visibility = View.GONE
-            }
-            MainNavigator.State.TWO_COLUMNS_EMPTY, MainNavigator.State.TWO_COLUMNS_WITH_DETAILS -> if (space_toolbar != null) {
-                space_toolbar.visibility = View.VISIBLE
-            }
-        }
     }
 
     override fun onSaveInstanceState(): Parcelable {

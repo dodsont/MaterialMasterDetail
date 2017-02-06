@@ -15,11 +15,13 @@ import android.support.v4.view.animation.LinearOutSlowInInterpolator
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.ui.main.MainNavigator
 import com.lucasurbas.masterdetail.ui.util.ViewUtils
 import kotlinx.android.synthetic.main.view_main_containers.view.*
+import kotlinx.android.synthetic.main.view_main_toolbar.view.*
 
 /**
  * Created by Lucas on 03/01/2017.
@@ -60,14 +62,16 @@ class ContainersLayout : FrameLayout {
     }
 
     fun hasTwoColumns(): Boolean {
-        return activity_main__space_master != null && space_details != null
+        return two_columns_container != null
     }
 
     private fun singleColumnMaster() {
         if (hasTwoColumns()) {
-            activity_main__space_master.visibility = View.GONE
-            space_details.visibility = View.GONE
             frame_details.visibility = View.GONE
+            frame_specific.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+            frame_specific.layoutParams = frame_specific.layoutParams
+            frame_master.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+            frame_master.layoutParams = frame_master.layoutParams
         } else {
             animateOutFrameDetails()
         }
@@ -76,8 +80,9 @@ class ContainersLayout : FrameLayout {
 
     private fun singleColumnDetails() {
         if (hasTwoColumns()) {
-            activity_main__space_master.visibility = View.GONE
-            space_details.visibility = View.GONE
+            val res = frame_master.context.resources
+            (frame_details.layoutParams as FrameLayout.LayoutParams).marginStart = res.getDimensionPixelSize(R.dimen.container_horizontal_padding_start)
+            frame_details.layoutParams = frame_details.layoutParams
         }
         frame_master.visibility = View.GONE
         frame_details.visibility = View.VISIBLE
@@ -85,9 +90,15 @@ class ContainersLayout : FrameLayout {
 
     private fun twoColumnsEmpty() {
         if (hasTwoColumns()) {
-            activity_main__space_master.visibility = View.VISIBLE
-            space_details.visibility = View.VISIBLE
             frame_details.visibility = View.VISIBLE
+            val res = frame_master.context.resources
+            frame_specific.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
+            frame_specific.layoutParams = frame_specific.layoutParams
+            frame_master.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
+            frame_master.layoutParams = frame_master.layoutParams
+            frame_details.visibility = View.VISIBLE
+            (frame_details.layoutParams as FrameLayout.LayoutParams).marginStart = res.getDimensionPixelSize(R.dimen.container_horizontal_padding_start) + res.getDimensionPixelSize(R.dimen.container_max_width)
+            frame_details.layoutParams = frame_details.layoutParams
         } else {
             animateOutFrameDetails()
         }
@@ -96,10 +107,15 @@ class ContainersLayout : FrameLayout {
 
     private fun twoColumnsWithDetails() {
         if (hasTwoColumns()) {
-            activity_main__space_master.visibility = View.VISIBLE
-            space_details.visibility = View.VISIBLE
             frame_master.visibility = View.VISIBLE
+            val res = frame_master.context.resources
+            frame_specific.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
+            frame_specific.layoutParams = frame_specific.layoutParams
+            frame_master.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
+            frame_master.layoutParams = frame_master.layoutParams
             frame_details.visibility = View.VISIBLE
+            (frame_details.layoutParams as FrameLayout.LayoutParams).marginStart = res.getDimensionPixelSize(R.dimen.container_horizontal_padding_start) + res.getDimensionPixelSize(R.dimen.container_max_width)
+            frame_details.layoutParams = frame_details.layoutParams
         } else {
             animateInFrameDetails()
         }
