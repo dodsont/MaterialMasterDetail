@@ -35,7 +35,7 @@ class PeopleAdapter : RecyclerView.Adapter<PeopleAdapter.PersonViewHolder>() {
 
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
         holder.personView.setUser(peopleList[position])
-        holder.personView.setonPersonClickListener(onPersonClickListener)
+        holder.personView.setOnPersonClickListener(onPersonClickListener)
     }
 
     fun setPeopleList(peopleList: List<Person>) {

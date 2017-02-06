@@ -42,7 +42,7 @@ class PersonView : FrameLayout {
         description.text = person.description
     }
 
-    fun setonPersonClickListener(onPersonClickListener: OnPersonClickListener?) {
+    fun setOnPersonClickListener(onPersonClickListener: OnPersonClickListener?) {
         this.onPersonClickListener = onPersonClickListener
         if (onPersonClickListener != null) {
             row.setOnClickListener { onPersonClickListener.onPersonClick(person!!) }
