@@ -21,50 +21,44 @@ constructor(private val navigator: MainContract.Navigator) : MainContract.Presen
     }
 
     override fun clickHomeFeed() {
-        if (view != null) {
-            view!!.highlightHomeFeed()
-            view!!.closeDrawer()
-        }
+        view?.highlightHomeFeed()
+        view?.closeDrawer()
+
         navigator.goToHomeFeed()
     }
 
     override fun clickPeople() {
-        if (view != null) {
-            view!!.highlightPeople()
-            view!!.closeDrawer()
-        }
+        view?.highlightPeople()
+        view?.closeDrawer()
+
         navigator.goToPeople()
     }
 
     override fun clickFavorites() {
-        if (view != null) {
-            view!!.highlightFavorites()
-            view!!.closeDrawer()
-        }
+        view?.highlightFavorites()
+        view?.closeDrawer()
+
         navigator.goToFavorites()
     }
 
     override fun clickMap() {
-        if (view != null) {
-            view!!.highlightMap()
-            view!!.closeDrawer()
-        }
+        view?.highlightMap()
+        view?.closeDrawer()
+
         navigator.goToMap()
     }
 
     override fun clickSettings() {
-        if (view != null) {
-            //            view.highlightSettings();
-            view!!.closeDrawer()
-        }
+        //            view?.highlightSettings();
+        view?.closeDrawer()
+
         navigator.goToSettings()
     }
 
     override fun clickFeedback() {
-        if (view != null) {
-            //            view.highlightHomeFeed();
-            view!!.closeDrawer()
-        }
+        //            view?.highlightHomeFeed();
+        view?.closeDrawer()
+
         navigator.goToFeedback()
     }
 }

@@ -26,8 +26,8 @@ class PeopleFragment : Fragment(), PeopleContract.View {
 
     private var adapter: PeopleAdapter? = null
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater!!.inflate(R.layout.fragment_people, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_people, container, false)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -51,7 +51,7 @@ class PeopleFragment : Fragment(), PeopleContract.View {
         val layoutManager = LinearLayoutManager(activity)
         recycler_view.layoutManager = layoutManager
         adapter = PeopleAdapter()
-        adapter!!.setOnPersonClickListener(object : PersonView.OnPersonClickListener {
+        adapter?.setOnPersonClickListener(object : PersonView.OnPersonClickListener {
             override fun onPersonClick(person: Person) {
                 presenter.clickPerson(person)
             }
@@ -97,7 +97,7 @@ class PeopleFragment : Fragment(), PeopleContract.View {
     }
 
     override fun showPeopleList(peopleList: List<Person>) {
-        adapter!!.setPeopleList(peopleList)
+        adapter?.setPeopleList(peopleList)
         recycler_view.scrollToPosition(0)
     }
 

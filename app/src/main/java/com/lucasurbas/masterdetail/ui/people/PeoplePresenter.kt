@@ -52,11 +52,10 @@ constructor(private val context: Context, private val navigator: PeopleContract.
             val person = Person(id = UUID.randomUUID().toString(),
                     name = randomName,
                     description = context.getString(R.string.fragment_people__lorem_ipsum))
-            peopleList!!.add(person)
+            peopleList?.add(person)
         }
-        if (view != null) {
-            view!!.showPeopleList(peopleList!!)
-        }
+
+        view?.showPeopleList(peopleList!!)
     }
 
     private val randomName: String
@@ -70,20 +69,18 @@ constructor(private val context: Context, private val navigator: PeopleContract.
     }
 
     override fun clickPersonAction(person: Person) {
-        view!!.showToast("Action clicked: " + person.name)
+        view?.showToast("Action clicked: " + person.name)
     }
 
     override fun loadMorePeople() {
         val handler = Handler()
         handler.postDelayed({
-            if (view != null) {
-                view!!.hideLoading()
+            view?.hideLoading()
                 val person = Person(id = UUID.randomUUID().toString(),
                         name = randomName,
                         description = context.getString(R.string.fragment_people__lorem_ipsum))
-                peopleList!!.add(0, person)
-                view!!.showPeopleList(peopleList!!)
-            }
+            peopleList?.add(0, person)
+            view?.showPeopleList(peopleList!!)
         }, 2000)
     }
 }

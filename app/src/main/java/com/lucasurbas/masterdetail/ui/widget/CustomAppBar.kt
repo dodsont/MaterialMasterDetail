@@ -80,7 +80,7 @@ class CustomAppBar : AppBarLayout {
         val bundle = Bundle()
         bundle.putParcelable(STATE_SUPER, super.onSaveInstanceState())
         bundle.putString(STATE_TITLE, toolbar_specific.title as String)
-        bundle.putString(STATE_TOOLBAR_STATE, state!!.name)
+        bundle.putString(STATE_TOOLBAR_STATE, state?.name)
         return bundle
     }
 

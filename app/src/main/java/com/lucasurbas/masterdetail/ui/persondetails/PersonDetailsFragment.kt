@@ -19,8 +19,8 @@ class PersonDetailsFragment : Fragment() {
 
     private var person: Person? = null
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater!!.inflate(R.layout.fragment_person_details, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_person_details, container, false)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
@@ -30,7 +30,7 @@ class PersonDetailsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        this.person = arguments.getParcelable<Person>(KEY_PERSON)
+        person = arguments.getParcelable<Person>(KEY_PERSON)
 
         setupToolbar()
         setPerson(person!!)

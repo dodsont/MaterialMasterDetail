@@ -17,8 +17,8 @@ import kotlinx.android.synthetic.main.view_main_containers.view.*
 
 class HomeFeedFragment : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater!!.inflate(R.layout.fragment_empty, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        return inflater.inflate(R.layout.fragment_empty, container, false)
     }
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {

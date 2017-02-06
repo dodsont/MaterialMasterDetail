@@ -167,7 +167,7 @@ class ContainersLayout : FrameLayout {
     override fun onSaveInstanceState(): Parcelable {
         val bundle = Bundle()
         bundle.putParcelable(STATE_SUPER, super.onSaveInstanceState())
-        bundle.putString(STATE_CONTAINERS_STATE, this.state!!.name)
+        bundle.putString(STATE_CONTAINERS_STATE, state?.name)
         return bundle
     }
 
