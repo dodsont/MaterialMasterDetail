@@ -19,7 +19,7 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.ui.main.MainNavigator
-import com.lucasurbas.masterdetail.ui.util.ViewUtils
+import com.lucasurbas.masterdetail.utils.onLaidOut
 import kotlinx.android.synthetic.main.view_main_containers.view.*
 import kotlinx.android.synthetic.main.view_main_toolbar.view.*
 
@@ -123,7 +123,7 @@ class ContainersLayout : FrameLayout {
 
     private fun animateInFrameDetails() {
         frame_details.visibility = View.VISIBLE
-        ViewUtils.onLaidOut(frame_details) {
+        frame_details.onLaidOut {
             val alpha = ObjectAnimator.ofFloat(frame_details, View.ALPHA, 0.4f, 1f)
             val translate = ofFloat(frame_details, View.TRANSLATION_Y, frame_details.height * 0.3f, 0f)
 
@@ -142,7 +142,7 @@ class ContainersLayout : FrameLayout {
     }
 
     private fun animateOutFrameDetails() {
-        ViewUtils.onLaidOut(frame_details) {
+        frame_details.onLaidOut {
             if (frame_details.isShown) {
                 val alpha = ObjectAnimator.ofFloat(frame_details, View.ALPHA, 1f, 0f)
                 val translate = ofFloat(frame_details, View.TRANSLATION_Y, 0f, frame_details.height * 0.3f)
