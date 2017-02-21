@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
-import kotlinx.android.synthetic.main.item_view_user_internal.view.*
+import kotlinx.android.synthetic.main.item_view_user.view.*
 
 /**
  * Created by Lucas on 04/01/2017.
@@ -33,7 +33,7 @@ class PersonView : FrameLayout {
     }
 
     private fun init() {
-        LayoutInflater.from(context).inflate(R.layout.item_view_user_internal, this, true)
+        LayoutInflater.from(context).inflate(R.layout.item_view_user, this, true)
     }
 
     fun setUser(person: Person) {

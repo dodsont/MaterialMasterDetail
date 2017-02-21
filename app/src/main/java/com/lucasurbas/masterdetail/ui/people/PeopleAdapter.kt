@@ -2,9 +2,7 @@ package com.lucasurbas.masterdetail.ui.people
 
 import android.support.v7.util.DiffUtil
 import android.support.v7.widget.RecyclerView
-import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
 import java.util.*
 
@@ -29,8 +27,7 @@ class PeopleAdapter : RecyclerView.Adapter<PeopleAdapter.PersonViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeopleAdapter.PersonViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_view_user, parent, false) as PersonView
-        return PersonViewHolder(view)
+        return PersonViewHolder(PersonView(parent.context))
     }
 
     override fun onBindViewHolder(holder: PersonViewHolder, position: Int) {
