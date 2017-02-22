@@ -1,4 +1,4 @@
-package com.lucasurbas.masterdetail.ui.widget
+package com.lucasurbas.masterdetail.ui.views
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter

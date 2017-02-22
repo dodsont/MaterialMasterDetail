@@ -40,9 +40,19 @@ class PeopleFragment : Fragment(), PeopleContract.View {
         setupRecyclerView()
         setupSwipeRefresh()
 
+        if (savedInstanceState != null) {
+            adapter?.selectedItemId = savedInstanceState.getString(STATE_SELECTED_ITEM_ID)
+        }
+
         inject()
         presenter.attachView(this)
         presenter.getPeople()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString(STATE_SELECTED_ITEM_ID, adapter?.selectedItemId)
+
+        super.onSaveInstanceState(outState)
     }
 
     private fun setupRecyclerView() {
@@ -106,6 +116,8 @@ class PeopleFragment : Fragment(), PeopleContract.View {
     }
 
     companion object {
+
+        private val STATE_SELECTED_ITEM_ID = "state_selected_item_id"
 
         fun newInstance(): PeopleFragment {
             val fragment = PeopleFragment()

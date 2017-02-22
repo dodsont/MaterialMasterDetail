@@ -7,7 +7,7 @@
     <dimen name="nav_header_height">160dp</dimen>
 
     <!-- Container Sheet -->
-    <dimen name="container_max_width">500dp</dimen>
+    <dimen name="container_max_width">420dp</dimen>
     <dimen name="container_horizontal_padding_start">72dp</dimen>
     <dimen name="container_horizontal_padding_end">13dp</dimen>
 
