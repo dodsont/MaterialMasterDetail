@@ -172,12 +172,12 @@ class ContainersLayout : FrameLayout {
     }
 
     public override fun onRestoreInstanceState(parcelable: Parcelable) {
-        var parcelable = parcelable
+        var superParcelable = parcelable
         if (parcelable is Bundle) {
             state = MainNavigator.State.valueOf(parcelable.getString(STATE_CONTAINERS_STATE))
-            parcelable = parcelable.getParcelable<Parcelable>(STATE_SUPER)
+            superParcelable = parcelable.getParcelable<Parcelable>(STATE_SUPER)
         }
-        super.onRestoreInstanceState(parcelable)
+        super.onRestoreInstanceState(superParcelable)
     }
 
     companion object {

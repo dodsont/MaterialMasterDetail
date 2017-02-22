@@ -85,13 +85,13 @@ class CustomAppBar : AppBarLayout {
     }
 
     public override fun onRestoreInstanceState(parcelable: Parcelable) {
-        var parcelable = parcelable
+        var superParcelable = parcelable
         if (parcelable is Bundle) {
             toolbar_specific.title = parcelable.getString(STATE_TITLE)
             setState(MainNavigator.State.valueOf(parcelable.getString(STATE_TOOLBAR_STATE)))
-            parcelable = parcelable.getParcelable<Parcelable>(STATE_SUPER)
+            superParcelable = parcelable.getParcelable<Parcelable>(STATE_SUPER)
         }
-        super.onRestoreInstanceState(parcelable)
+        super.onRestoreInstanceState(superParcelable)
     }
 
     companion object {
