@@ -79,7 +79,7 @@ class CustomAppBar : AppBarLayout {
     override fun onSaveInstanceState(): Parcelable {
         val bundle = Bundle()
         bundle.putParcelable(STATE_SUPER, super.onSaveInstanceState())
-        bundle.putString(STATE_TITLE, toolbar_specific.title as String)
+        bundle.putString(STATE_TITLE, toolbar_specific.title as String?)
         bundle.putString(STATE_TOOLBAR_STATE, state?.name)
         return bundle
     }
@@ -88,7 +88,10 @@ class CustomAppBar : AppBarLayout {
         var superParcelable = parcelable
         if (parcelable is Bundle) {
             toolbar_specific.title = parcelable.getString(STATE_TITLE)
-            setState(MainNavigator.State.valueOf(parcelable.getString(STATE_TOOLBAR_STATE)))
+            val stateStr = parcelable.getString(STATE_TOOLBAR_STATE)
+            if (stateStr != null) {
+                setState(MainNavigator.State.valueOf(stateStr))
+            }
             superParcelable = parcelable.getParcelable<Parcelable>(STATE_SUPER)
         }
         super.onRestoreInstanceState(superParcelable)

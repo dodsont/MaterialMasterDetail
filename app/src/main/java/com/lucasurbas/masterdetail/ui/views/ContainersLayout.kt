@@ -174,7 +174,10 @@ class ContainersLayout : FrameLayout {
     public override fun onRestoreInstanceState(parcelable: Parcelable) {
         var superParcelable = parcelable
         if (parcelable is Bundle) {
-            state = MainNavigator.State.valueOf(parcelable.getString(STATE_CONTAINERS_STATE))
+            val stateStr = parcelable.getString(STATE_CONTAINERS_STATE)
+            if (stateStr != null) {
+                state = MainNavigator.State.valueOf(stateStr)
+            }
             superParcelable = parcelable.getParcelable<Parcelable>(STATE_SUPER)
         }
         super.onRestoreInstanceState(superParcelable)
