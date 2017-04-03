@@ -8,10 +8,6 @@ import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
 import kotlinx.android.synthetic.main.item_view_user.view.*
 
-/**
- * Created by Lucas on 04/01/2017.
- */
-
 class PersonView : FrameLayout {
 
     private var person: Person? = null

@@ -23,10 +23,6 @@ import com.lucasurbas.masterdetail.utils.onLaidOut
 import kotlinx.android.synthetic.main.view_main_containers.view.*
 import kotlinx.android.synthetic.main.view_main_toolbar.view.*
 
-/**
- * Created by Lucas on 03/01/2017.
- */
-
 class ContainersLayout : FrameLayout {
 
     var state: MainNavigator.State? = null

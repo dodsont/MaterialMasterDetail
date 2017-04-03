@@ -16,10 +16,6 @@ import kotlinx.android.synthetic.main.fragment_people.*
 import kotlinx.android.synthetic.main.view_main_containers.view.*
 import javax.inject.Inject
 
-/**
- * Created by Lucas on 04/01/2017.
- */
-
 class PeopleFragment : Fragment(), PeopleContract.View {
 
     @Inject lateinit var presenter: PeopleContract.Presenter

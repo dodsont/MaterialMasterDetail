@@ -6,9 +6,6 @@ import com.lucasurbas.masterdetail.ui.util.BaseNavigator
 import com.lucasurbas.masterdetail.ui.util.BasePresenter
 import com.lucasurbas.masterdetail.ui.util.BaseView
 
-/**
- * Created by Lucas on 12/06/16.
- */
 interface MainContract {
 
     interface Navigator : BaseNavigator {

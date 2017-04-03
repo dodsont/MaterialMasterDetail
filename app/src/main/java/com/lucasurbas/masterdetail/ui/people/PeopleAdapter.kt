@@ -6,10 +6,6 @@ import android.view.ViewGroup
 import com.lucasurbas.masterdetail.data.Person
 import java.util.*
 
-/**
- * Created by Lucas on 04/01/2017.
- */
-
 class PeopleAdapter : RecyclerView.Adapter<PeopleAdapter.PersonViewHolder>() {
 
     var selectedItemId: String? = null

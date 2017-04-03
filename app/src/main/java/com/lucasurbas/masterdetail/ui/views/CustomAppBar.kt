@@ -12,10 +12,6 @@ import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.ui.main.MainNavigator
 import kotlinx.android.synthetic.main.view_main_toolbar.view.*
 
-/**
- * Created by Lucas on 02/01/2017.
- */
-
 class CustomAppBar : AppBarLayout {
 
     private var state: MainNavigator.State? = null

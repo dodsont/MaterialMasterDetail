@@ -12,10 +12,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_main_containers.view.*
 import javax.inject.Inject
 
-/**
- * Created by Lucas on 02/01/2017.
- */
-
 class MainNavigator
 @Inject
 constructor(private val mainActivity: MainActivity) : MainContract.Navigator {

@@ -11,10 +11,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_empty.*
 import kotlinx.android.synthetic.main.view_main_containers.view.*
 
-/**
- * Created by Lucas on 03/01/2017.
- */
-
 class HomeFeedFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {

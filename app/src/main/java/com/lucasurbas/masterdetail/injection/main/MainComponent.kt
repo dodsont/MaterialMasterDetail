@@ -8,9 +8,6 @@ import com.lucasurbas.masterdetail.ui.main.MainActivity
 
 import dagger.Component
 
-/**
- * Created by Lucas on 12/06/16.
- */
 @ActivityScope
 @Component(dependencies = arrayOf(ApplicationComponent::class), modules = arrayOf(MainModule::class))
 interface MainComponent {

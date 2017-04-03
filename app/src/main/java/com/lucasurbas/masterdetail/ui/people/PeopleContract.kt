@@ -5,10 +5,6 @@ import com.lucasurbas.masterdetail.ui.util.BaseNavigator
 import com.lucasurbas.masterdetail.ui.util.BasePresenter
 import com.lucasurbas.masterdetail.ui.util.BaseView
 
-/**
- * Created by Lucas on 04/01/2017.
- */
-
 interface PeopleContract {
 
     interface Navigator : BaseNavigator {

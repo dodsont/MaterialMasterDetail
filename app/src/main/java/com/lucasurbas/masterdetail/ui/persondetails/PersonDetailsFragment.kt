@@ -11,10 +11,6 @@ import com.lucasurbas.masterdetail.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_person_details.*
 
-/**
- * Created by Lucas on 02/01/2017.
- */
-
 class PersonDetailsFragment : Fragment() {
 
     private var person: Person? = null

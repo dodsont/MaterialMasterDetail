@@ -7,10 +7,6 @@ import com.lucasurbas.masterdetail.injection.app.ApplicationComponent
 import com.lucasurbas.masterdetail.injection.app.ApplicationModule
 import com.lucasurbas.masterdetail.injection.app.DaggerApplicationComponent
 
-/**
- * Created by Lucas on 02/01/2017.
- */
-
 class MasterDetailApplication : Application() {
 
     private var applicationComponent: ApplicationComponent? = null

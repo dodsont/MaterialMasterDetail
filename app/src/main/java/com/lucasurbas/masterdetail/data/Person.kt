@@ -4,10 +4,6 @@ import android.os.Parcel
 import android.os.Parcelable
 import paperparcel.PaperParcel
 
-/**
- * Created by Lucas on 04/01/2017.
- */
-
 @PaperParcel
 data class Person(
         val id: String,

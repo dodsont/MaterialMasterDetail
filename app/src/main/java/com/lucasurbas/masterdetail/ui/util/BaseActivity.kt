@@ -6,9 +6,6 @@ import android.support.v7.app.AppCompatActivity
 import com.lucasurbas.masterdetail.app.MasterDetailApplication
 import com.lucasurbas.masterdetail.injection.app.ApplicationComponent
 
-/**
- * Created by Lucas on 19/06/16.
- */
 abstract class BaseActivity : AppCompatActivity() {
 
     public override fun onCreate(savedInstanceState: Bundle?) {

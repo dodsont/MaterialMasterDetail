@@ -2,10 +2,6 @@ package com.lucasurbas.masterdetail.ui.main
 
 import javax.inject.Inject
 
-/**
- * Created by Lucas on 02/01/2017.
- */
-
 class MainPresenter
 @Inject
 constructor(private val navigator: MainContract.Navigator) : MainContract.Presenter {

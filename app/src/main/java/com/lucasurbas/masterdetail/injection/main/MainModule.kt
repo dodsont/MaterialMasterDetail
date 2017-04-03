@@ -11,9 +11,6 @@ import com.lucasurbas.masterdetail.ui.main.MainPresenter
 import dagger.Module
 import dagger.Provides
 
-/**
- * Created by Lucas on 12/06/16.
- */
 @Module
 class MainModule(private val mainActivity: MainActivity) {
 

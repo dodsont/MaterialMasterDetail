@@ -7,10 +7,6 @@ import com.lucasurbas.masterdetail.ui.people.PeoplePresenter
 
 import dagger.Module
 import dagger.Provides
-
-/**
- * Created by Lucas on 04/01/2017.
- */
 @Module
 class PeopleModule {
 

@@ -4,10 +4,6 @@ import android.support.v7.util.DiffUtil
 
 import com.lucasurbas.masterdetail.data.Person
 
-/**
- * Created by Lucas on 04/01/2017.
- */
-
 class PeopleListDiffCallback(private val oldList: List<Person>?, private val newList: List<Person>?) : DiffUtil.Callback() {
 
     override fun getOldListSize(): Int {
