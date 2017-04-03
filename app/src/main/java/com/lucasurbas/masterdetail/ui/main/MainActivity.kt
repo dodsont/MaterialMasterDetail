@@ -21,7 +21,7 @@ class MainActivity : BaseActivity(), MainContract.View, NavigationView.OnNavigat
     @Inject lateinit var navigator: MainContract.Navigator
         internal set
 
-    var mainComponent: MainComponent? = null
+    lateinit var mainComponent: MainComponent
         private set
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,7 +47,7 @@ class MainActivity : BaseActivity(), MainContract.View, NavigationView.OnNavigat
                 .mainModule(MainModule(this))
                 .build()
 
-        mainComponent!!.inject(this)
+        mainComponent.inject(this)
     }
 
     override fun onDestroy() {

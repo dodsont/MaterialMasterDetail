@@ -84,7 +84,7 @@ class PeopleFragment : Fragment(), PeopleContract.View {
     }
 
     private fun inject() {
-        (activity as MainActivity).mainComponent?.plus(PeopleModule())?.inject(this)
+        (activity as MainActivity).mainComponent.plus(PeopleModule()).inject(this)
     }
 
     override fun onDestroyView() {
