@@ -2,7 +2,7 @@
 
 Android Application sample of how to implement Master/Detail pattern that follows Material Design visual language.
 
-It is a Kotlin porting of Lucas Urbas's sample (see his article on [this link](http://goo.gl/ex8MVd)).
+It is a Kotlin port of Lucas Urbas's sample (see his article on [this link](http://goo.gl/ex8MVd)), which does an extensive use of MVP pattern and dependency injection (dagger2) in order to make it testable.
 I also tried to simplify it and did some graphical changes to better suit my taste (up to you to like it or not).
 
 Be sure to check this sample on Mobile as well as on Tablet!
@@ -15,7 +15,7 @@ Be sure to check this sample on Mobile as well as on Tablet!
 
 ### License
 
-    Copyright 2017 Lucas Urbas
+    Copyright 2017 Frédéric Julian, Lucas Urbas
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
