@@ -41,8 +41,10 @@ class PersonView : FrameLayout {
     fun setOnPersonClickListener(onPersonClickListener: OnPersonClickListener?) {
         this.onPersonClickListener = onPersonClickListener
         if (onPersonClickListener != null) {
-            row.setOnClickListener { onPersonClickListener.onPersonClick(person!!) }
-            action.setOnClickListener { onPersonClickListener.onPersonActionClick(person!!) }
+            person?.let { p ->
+                row.setOnClickListener { onPersonClickListener.onPersonClick(p) }
+                action.setOnClickListener { onPersonClickListener.onPersonActionClick(p) }
+            }
         } else {
             row.setOnClickListener(null)
             action.setOnClickListener(null)

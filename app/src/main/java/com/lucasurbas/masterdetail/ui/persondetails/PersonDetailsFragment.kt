@@ -29,7 +29,9 @@ class PersonDetailsFragment : Fragment() {
         person = arguments.getParcelable<Person>(KEY_PERSON)
 
         setupToolbar()
-        setPerson(person!!)
+        person?.let {
+            setPerson(it)
+        }
     }
 
     private fun setupToolbar() {

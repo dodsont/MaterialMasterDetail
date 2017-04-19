@@ -9,7 +9,7 @@ import com.lucasurbas.masterdetail.injection.app.DaggerApplicationComponent
 
 class MasterDetailApplication : Application() {
 
-    private var applicationComponent: ApplicationComponent? = null
+    private lateinit var applicationComponent: ApplicationComponent
 
     override fun onCreate() {
         super.onCreate()
@@ -22,7 +22,7 @@ class MasterDetailApplication : Application() {
     companion object {
 
         fun getAppComponent(context: Context): ApplicationComponent {
-            return (context.applicationContext as MasterDetailApplication).applicationComponent!!
+            return (context.applicationContext as MasterDetailApplication).applicationComponent
         }
     }
 }

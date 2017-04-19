@@ -44,14 +44,16 @@ constructor(private val context: Context, private val navigator: PeopleContract.
 
     override fun getPeople() {
         peopleList = ArrayList<Person>()
-        for (i in 0..7) {
-            val person = Person(id = UUID.randomUUID().toString(),
-                    name = randomName,
-                    description = context.getString(R.string.fragment_people__lorem_ipsum))
-            peopleList?.add(person)
-        }
 
-        view?.showPeopleList(peopleList!!)
+        peopleList?.let { list ->
+            for (i in 0..7) {
+                val person = Person(id = UUID.randomUUID().toString(),
+                        name = randomName,
+                        description = context.getString(R.string.fragment_people__lorem_ipsum))
+                peopleList?.add(person)
+            }
+            view?.showPeopleList(list)
+        }
     }
 
     private val randomName: String
@@ -72,11 +74,15 @@ constructor(private val context: Context, private val navigator: PeopleContract.
         val handler = Handler()
         handler.postDelayed({
             view?.hideLoading()
+
+            peopleList?.let { list ->
                 val person = Person(id = UUID.randomUUID().toString(),
                         name = randomName,
                         description = context.getString(R.string.fragment_people__lorem_ipsum))
-            peopleList?.add(0, person)
-            view?.showPeopleList(peopleList!!)
+
+                list.add(0, person)
+                view?.showPeopleList(list)
+            }
         }, 2000)
     }
 }
