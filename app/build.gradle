@@ -13,12 +13,19 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        // if true, stop the gradle build if errors are found
+        abortOnError true
+    }
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -31,6 +38,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     // Support
+    ext.support_version = '25.3.1'
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:support-v4:$support_version"
     compile "com.android.support:design:$support_version"
@@ -42,9 +50,9 @@ dependencies {
     compile "com.google.dagger:dagger:2.9"
 
     // PaperParcel
-    compile 'nz.bradcampbell:paperparcel:2.0.0'
-    compile 'nz.bradcampbell:paperparcel-kotlin:2.0.0'
-    kapt 'nz.bradcampbell:paperparcel-compiler:2.0.0'
+    compile 'nz.bradcampbell:paperparcel:2.0.1'
+    compile 'nz.bradcampbell:paperparcel-kotlin:2.0.1'
+    kapt 'nz.bradcampbell:paperparcel-compiler:2.0.1'
 
     // 4dp line alignment
     compile 'com.actinarium.aligned:aligned:0.1'
