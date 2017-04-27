@@ -1,4 +1,4 @@
-package com.lucasurbas.masterdetail.utils
+package com.lucasurbas.masterdetail.ui.utils
 
 import android.content.Context
 import android.util.TypedValue

@@ -1,9 +1,9 @@
 package com.lucasurbas.masterdetail.ui.people
 
 import com.lucasurbas.masterdetail.data.Person
-import com.lucasurbas.masterdetail.ui.util.BaseNavigator
-import com.lucasurbas.masterdetail.ui.util.BasePresenter
-import com.lucasurbas.masterdetail.ui.util.BaseView
+import com.lucasurbas.masterdetail.ui.utils.BaseNavigator
+import com.lucasurbas.masterdetail.ui.utils.BasePresenter
+import com.lucasurbas.masterdetail.ui.utils.BaseView
 
 interface PeopleContract {
 

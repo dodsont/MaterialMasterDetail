@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <com.lucasurbas.masterdetail.ui.views.CustomAppBar
+        <com.lucasurbas.masterdetail.ui.main.CustomAppBar
             android:id="@+id/custom_appbar"
             android:fitsSystemWindows="true"
             android:stateListAnimator="@animator/appbar_always_elevated"

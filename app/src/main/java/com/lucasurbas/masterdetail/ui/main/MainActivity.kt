@@ -10,7 +10,7 @@ import com.lucasurbas.masterdetail.injection.app.ApplicationComponent
 import com.lucasurbas.masterdetail.injection.main.DaggerMainComponent
 import com.lucasurbas.masterdetail.injection.main.MainComponent
 import com.lucasurbas.masterdetail.injection.main.MainModule
-import com.lucasurbas.masterdetail.ui.util.BaseActivity
+import com.lucasurbas.masterdetail.ui.utils.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.view_main_containers.view.*
 import javax.inject.Inject

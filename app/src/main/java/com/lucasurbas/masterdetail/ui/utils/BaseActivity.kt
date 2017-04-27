@@ -1,4 +1,4 @@
-package com.lucasurbas.masterdetail.ui.util
+package com.lucasurbas.masterdetail.ui.utils
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

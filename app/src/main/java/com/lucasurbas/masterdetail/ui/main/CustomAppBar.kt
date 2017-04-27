@@ -1,4 +1,4 @@
-package com.lucasurbas.masterdetail.ui.views
+package com.lucasurbas.masterdetail.ui.main
 
 import android.content.Context
 import android.os.Bundle
@@ -7,9 +7,7 @@ import android.support.annotation.MenuRes
 import android.support.design.widget.AppBarLayout
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import android.view.View
 import com.lucasurbas.masterdetail.R
-import com.lucasurbas.masterdetail.ui.main.MainNavigator
 import kotlinx.android.synthetic.main.view_main_toolbar.view.*
 
 class CustomAppBar : AppBarLayout {
@@ -38,7 +36,7 @@ class CustomAppBar : AppBarLayout {
         return toolbar_general != null
     }
 
-    fun setOnNavigationClickListener(onNavigationClickListener: View.OnClickListener) {
+    fun setOnNavigationClickListener(onNavigationClickListener: OnClickListener) {
         if (toolbar_general != null) {
             toolbar_general.setNavigationOnClickListener(onNavigationClickListener)
         } else {

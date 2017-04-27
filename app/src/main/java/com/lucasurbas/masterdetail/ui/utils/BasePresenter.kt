@@ -1,4 +1,4 @@
-package com.lucasurbas.masterdetail.ui.util
+package com.lucasurbas.masterdetail.ui.utils
 
 interface BasePresenter<in V : BaseView> {
 

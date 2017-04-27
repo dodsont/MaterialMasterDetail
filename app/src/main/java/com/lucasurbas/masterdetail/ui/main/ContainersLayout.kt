@@ -1,9 +1,8 @@
-package com.lucasurbas.masterdetail.ui.views
+package com.lucasurbas.masterdetail.ui.main
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.animation.ObjectAnimator.ofFloat
 import android.annotation.TargetApi
 import android.content.Context
@@ -18,8 +17,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import com.lucasurbas.masterdetail.R
-import com.lucasurbas.masterdetail.ui.main.MainNavigator
-import com.lucasurbas.masterdetail.utils.onLaidOut
+import com.lucasurbas.masterdetail.ui.utils.onLaidOut
 import kotlinx.android.synthetic.main.view_main_containers.view.*
 import kotlinx.android.synthetic.main.view_main_toolbar.view.*
 
@@ -77,7 +75,7 @@ class ContainersLayout : FrameLayout {
     private fun singleColumnDetails() {
         if (hasTwoColumns()) {
             val res = frame_master.context.resources
-            (frame_details.layoutParams as FrameLayout.LayoutParams).marginStart = res.getDimensionPixelSize(R.dimen.container_horizontal_padding_start)
+            (frame_details.layoutParams as LayoutParams).marginStart = res.getDimensionPixelSize(R.dimen.container_horizontal_padding_start)
             frame_details.layoutParams = frame_details.layoutParams
         }
         frame_master.visibility = View.GONE
@@ -93,7 +91,7 @@ class ContainersLayout : FrameLayout {
             frame_master.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
             frame_master.layoutParams = frame_master.layoutParams
             frame_details.visibility = View.VISIBLE
-            (frame_details.layoutParams as FrameLayout.LayoutParams).marginStart = res.getDimensionPixelSize(R.dimen.container_horizontal_padding_start) + res.getDimensionPixelSize(R.dimen.container_max_width)
+            (frame_details.layoutParams as LayoutParams).marginStart = res.getDimensionPixelSize(R.dimen.container_horizontal_padding_start) + res.getDimensionPixelSize(R.dimen.container_max_width)
             frame_details.layoutParams = frame_details.layoutParams
         } else {
             animateOutFrameDetails()
@@ -110,7 +108,7 @@ class ContainersLayout : FrameLayout {
             frame_master.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
             frame_master.layoutParams = frame_master.layoutParams
             frame_details.visibility = View.VISIBLE
-            (frame_details.layoutParams as FrameLayout.LayoutParams).marginStart = res.getDimensionPixelSize(R.dimen.container_horizontal_padding_start) + res.getDimensionPixelSize(R.dimen.container_max_width)
+            (frame_details.layoutParams as LayoutParams).marginStart = res.getDimensionPixelSize(R.dimen.container_horizontal_padding_start) + res.getDimensionPixelSize(R.dimen.container_max_width)
             frame_details.layoutParams = frame_details.layoutParams
         } else {
             animateInFrameDetails()
@@ -120,7 +118,7 @@ class ContainersLayout : FrameLayout {
     private fun animateInFrameDetails() {
         frame_details.visibility = View.VISIBLE
         frame_details.onLaidOut {
-            val alpha = ObjectAnimator.ofFloat(frame_details, View.ALPHA, 0.4f, 1f)
+            val alpha = ofFloat(frame_details, View.ALPHA, 0.4f, 1f)
             val translate = ofFloat(frame_details, View.TRANSLATION_Y, frame_details.height * 0.3f, 0f)
 
             val set = AnimatorSet()
@@ -140,7 +138,7 @@ class ContainersLayout : FrameLayout {
     private fun animateOutFrameDetails() {
         frame_details.onLaidOut {
             if (frame_details.isShown) {
-                val alpha = ObjectAnimator.ofFloat(frame_details, View.ALPHA, 1f, 0f)
+                val alpha = ofFloat(frame_details, View.ALPHA, 1f, 0f)
                 val translate = ofFloat(frame_details, View.TRANSLATION_Y, 0f, frame_details.height * 0.3f)
 
                 val set = AnimatorSet()
