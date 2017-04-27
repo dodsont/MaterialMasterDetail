@@ -29,7 +29,7 @@ class HomeFeedFragment : Fragment() {
 
     private fun setupToolbar() {
         val appBar = (activity as MainActivity).containers_layout.custom_appbar
-        appBar.setTitle(getString(R.string.fragment_homefeed__title))
+        appBar.setTitle(R.string.fragment_homefeed__title)
         appBar.setMenuRes(R.menu.homefeed_general, R.menu.homefeed_specific, R.menu.homefeed_merged)
     }
 

@@ -71,7 +71,7 @@ class PeopleFragment : Fragment(), PeopleContract.View {
 
     private fun setupToolbar() {
         val appBar = (activity as MainActivity).containers_layout.custom_appbar
-        appBar.setTitle(getString(R.string.fragment_people__title))
+        appBar.setTitle(R.string.fragment_people__title)
         appBar.setMenuRes(R.menu.people_general, R.menu.people_specific, R.menu.people_merged)
     }
 

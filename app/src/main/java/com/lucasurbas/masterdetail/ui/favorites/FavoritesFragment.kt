@@ -29,7 +29,7 @@ class FavoritesFragment : Fragment() {
 
     private fun setupToolbar() {
         val appBar = (activity as MainActivity).containers_layout.custom_appbar
-        appBar.setTitle(getString(R.string.fragment_favorites__title))
+        appBar.setTitle(R.string.fragment_favorites__title)
         appBar.setMenuRes(R.menu.favorites_general, R.menu.favorites_specific, R.menu.favorites_merged)
     }
 
