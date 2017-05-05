@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lucasurbas.masterdetail.R
-import com.lucasurbas.masterdetail.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_empty.*
 import kotlinx.android.synthetic.main.view_main_containers.view.*
@@ -28,7 +27,7 @@ class FavoritesFragment : Fragment() {
     }
 
     private fun setupToolbar() {
-        val appBar = (activity as MainActivity).containers_layout.custom_appbar
+        val appBar = activity.containers_layout.custom_appbar
         appBar.setTitle(R.string.fragment_favorites__title)
         appBar.setMenuRes(R.menu.favorites_general, R.menu.favorites_specific, R.menu.favorites_merged)
     }
@@ -36,10 +35,7 @@ class FavoritesFragment : Fragment() {
     companion object {
 
         fun newInstance(): FavoritesFragment {
-            val fragment = FavoritesFragment()
-            val bundle = Bundle()
-            fragment.arguments = bundle
-            return fragment
+            return FavoritesFragment()
         }
     }
 }

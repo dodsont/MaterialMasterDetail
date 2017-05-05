@@ -28,7 +28,7 @@ class MapFragment : Fragment() {
     }
 
     private fun setupToolbar() {
-        val appBar = (activity as MainActivity).containers_layout.custom_appbar
+        val appBar = activity.containers_layout.custom_appbar
         appBar.setTitle("")
         appBar.clearMenu()
 
@@ -41,10 +41,7 @@ class MapFragment : Fragment() {
     companion object {
 
         fun newInstance(): MapFragment {
-            val fragment = MapFragment()
-            val bundle = Bundle()
-            fragment.arguments = bundle
-            return fragment
+            return MapFragment()
         }
     }
 }

@@ -70,7 +70,7 @@ class PeopleFragment : Fragment(), PeopleContract.View {
     }
 
     private fun setupToolbar() {
-        val appBar = (activity as MainActivity).containers_layout.custom_appbar
+        val appBar = activity.containers_layout.custom_appbar
         appBar.setTitle(R.string.fragment_people__title)
         appBar.setMenuRes(R.menu.people_general, R.menu.people_specific, R.menu.people_merged)
     }
@@ -116,10 +116,7 @@ class PeopleFragment : Fragment(), PeopleContract.View {
         private val STATE_SELECTED_ITEM_ID = "state_selected_item_id"
 
         fun newInstance(): PeopleFragment {
-            val fragment = PeopleFragment()
-            val bundle = Bundle()
-            fragment.arguments = bundle
-            return fragment
+            return PeopleFragment()
         }
     }
 }

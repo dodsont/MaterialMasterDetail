@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.lucasurbas.masterdetail.R
 import com.lucasurbas.masterdetail.data.Person
-import com.lucasurbas.masterdetail.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_person_details.*
 
@@ -26,7 +25,7 @@ class PersonDetailsFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        person = arguments.getParcelable<Person>(KEY_PERSON)
+        person = arguments.getParcelable<Person>(ARG_PERSON)
 
         setupToolbar()
         person?.let {
@@ -37,7 +36,7 @@ class PersonDetailsFragment : Fragment() {
     private fun setupToolbar() {
         toolbar.inflateMenu(R.menu.person_details)
 
-        if (!(activity as MainActivity).containers_layout.hasTwoColumns()) {
+        if (!activity.containers_layout.hasTwoColumns()) {
             toolbar.setNavigationIcon(R.drawable.ic_back_24dp)
             toolbar.setNavigationOnClickListener { activity.onBackPressed() }
         }
@@ -50,12 +49,12 @@ class PersonDetailsFragment : Fragment() {
 
     companion object {
 
-        private val KEY_PERSON = "key_person"
+        private val ARG_PERSON = "ARG_PERSON"
 
         fun newInstance(person: Person): PersonDetailsFragment {
             val fragment = PersonDetailsFragment()
             val bundle = Bundle()
-            bundle.putParcelable(KEY_PERSON, person)
+            bundle.putParcelable(ARG_PERSON, person)
             fragment.arguments = bundle
             return fragment
         }
