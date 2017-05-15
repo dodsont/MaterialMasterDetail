@@ -62,8 +62,8 @@ class ContainersLayout : FrameLayout {
     private fun singleColumnMaster() {
         if (hasTwoColumns()) {
             frame_details.visibility = View.GONE
-            frame_specific.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
-            frame_specific.layoutParams = frame_specific.layoutParams
+            toolbar_specific.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+            toolbar_specific.layoutParams = toolbar_specific.layoutParams
             frame_master.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
             frame_master.layoutParams = frame_master.layoutParams
         } else {
@@ -86,8 +86,8 @@ class ContainersLayout : FrameLayout {
         if (hasTwoColumns()) {
             frame_details.visibility = View.VISIBLE
             val res = frame_master.context.resources
-            frame_specific.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
-            frame_specific.layoutParams = frame_specific.layoutParams
+            toolbar_specific.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
+            toolbar_specific.layoutParams = toolbar_specific.layoutParams
             frame_master.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
             frame_master.layoutParams = frame_master.layoutParams
             frame_details.visibility = View.VISIBLE
@@ -103,8 +103,8 @@ class ContainersLayout : FrameLayout {
         if (hasTwoColumns()) {
             frame_master.visibility = View.VISIBLE
             val res = frame_master.context.resources
-            frame_specific.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
-            frame_specific.layoutParams = frame_specific.layoutParams
+            toolbar_specific.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
+            toolbar_specific.layoutParams = toolbar_specific.layoutParams
             frame_master.layoutParams.width = res.getDimensionPixelSize(R.dimen.container_max_width)
             frame_master.layoutParams = frame_master.layoutParams
             frame_details.visibility = View.VISIBLE

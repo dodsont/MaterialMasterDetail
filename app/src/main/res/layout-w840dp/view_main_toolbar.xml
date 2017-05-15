@@ -10,17 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
 
-
-    <FrameLayout
-        android:id="@+id/frame_specific"
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_specific"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:layout_marginStart="@dimen/container_horizontal_padding_start">
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar_specific"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
-    </FrameLayout>
+        android:layout_marginStart="@dimen/container_horizontal_padding_start" />
 
 </merge>
